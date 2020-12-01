@@ -14,3 +14,6 @@ example_getElementsByClassName[1].style['background-color'] = "purple"
 example_getElementsByClassName[1].style['color'] = "white"
 
 
+// getElementsByTagName
+var example_getElementsByTagName = document.getElementsByTagName("p");
+console.log(example_getElementsByTagName)
