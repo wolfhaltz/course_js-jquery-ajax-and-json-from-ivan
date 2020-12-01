@@ -5,70 +5,71 @@
         <link rel="stylesheet" href="assets/css/index.css">
     </head>
     <body>
-        
-        <!-- Loop: introduction -->
-        <div>
-            <p>Loops são estruturas de repetição de comandos, então se eu quiser repetir algo, escrevo uma vez e defino quantas vezes ele vai ser repetido</p>
-        </div>
-        <!-- Loop For -->
-        <div>
-            <p>
-                A primeira expressão é alguma coisa que vai ser executada uma vez antes do loop começar,
-                ou seja, inicializamos uma variável.
-                O segundo comando é uma condição para que o loop seja passado.
-                Já o terceiro comando que vamos executar em todas as passagens do loop, na final da passagem,
-                ou seja, incrementando o valor da primeira expressão para que o loop passe
-            </p>
-            <p>No exemplo a baixo, o loop passará 5 vezes:</p>
-            <pre>
-                for(var a = 0; a < 5; a++){
-                    console.log(a)
-                }
-            </pre>
-        </div>
+        <div class="container">
+            <!-- Loop: introduction -->
+            <div class="row">
+                <p>Loops são estruturas de repetição de comandos, então se eu quiser repetir algo, escrevo uma vez e defino quantas vezes ele vai ser repetido</p>
+            </div>
+            <!-- Loop For -->
+            <div class="row">
+                <p>
+                    A primeira expressão é alguma coisa que vai ser executada uma vez antes do loop começar,
+                    ou seja, inicializamos uma variável.
+                    O segundo comando é uma condição para que o loop seja passado.
+                    Já o terceiro comando que vamos executar em todas as passagens do loop, na final da passagem,
+                    ou seja, incrementando o valor da primeira expressão para que o loop passe
+                </p>
+                <p>No exemplo a baixo, o loop passará 5 vezes:</p>
+                <pre>
+                    for(var a = 0; a < 5; a++){
+                        console.log(a)
+                    }
+                </pre>
+            </div>
 
-        <!-- Loop For at Array -->
-        <div>
-            <p>Agora, como podemos percorrer um array usando um for?</p>
-            <pre>
-                var students = ['Peter', 'Marie', 'Joseph']
-                for(var b = 0; b < students.length; b++){
-                    console.log(students[b])
-                }
-            </pre>
-            <p>Note que usamos 'b' como índice para percorrer cada aluno.</p>
-        </div>
+            <!-- Loop For at Array -->
+            <div class="row">
+                <p>Agora, como podemos percorrer um array usando um for?</p>
+                <pre>
+                    var students = ['Peter', 'Marie', 'Joseph']
+                    for(var b = 0; b < students.length; b++){
+                        console.log(students[b])
+                    }
+                </pre>
+                <p>Note que usamos 'b' como índice para percorrer cada aluno.</p>
+            </div>
 
-        <!-- Loop For/In -->
-        <div>
-            <h1>Loop For/In</h1>
-            <p>No loop for/in, percorremos um objeto, deste modo:</p>
-            <pre>
-                var cars = {
-                    'year': 2020,
-                    'model': 'Fox',
-                    'fuel': 'Gasoline'
-                }
-                for(var prop in cars){
-                    console.log(prop +':' + cars[prop])
-                }
-            </pre>
-        </div>
+            <!-- Loop For/In -->
+            <div class="row">
+                <h1>Loop For/In</h1>
+                <p>No loop for/in, percorremos um objeto, deste modo:</p>
+                <pre>
+                    var cars = {
+                        'year': 2020,
+                        'model': 'Fox',
+                        'fuel': 'Gasoline'
+                    }
+                    for(var prop in cars){
+                        console.log(prop +':' + cars[prop])
+                    }
+                </pre>
+            </div>
 
-        <!-- getElementsByClassName & Loop For -->
-        <div>
-            <h1>Using getElementsByClassName at a for loop</h1>
-            <div class="example"></div>
-            <div class="example"></div>
-            <p>The source code to change this above text (color and added text inside it), was:</p>
-            <pre>
-                var elements = document.getElementsByClassName("example");
-                for(var c = 0; c < elements.length; c++){
-                    elements[c].innerHTML = "This is the div number "+c
-                    elements[c].style.color = 'orange';
-                    elements[c].style['font-weight'] = 'bold';
-                }
-            </pre>
+            <!-- getElementsByClassName & Loop For -->
+            <div class="row">
+                <h1>Using getElementsByClassName at a for loop</h1>
+                <div class="example"></div>
+                <div class="example"></div>
+                <p>The source code to change this above text (color and added text inside it), was:</p>
+                <pre>
+                    var elements = document.getElementsByClassName("example");
+                    for(var c = 0; c < elements.length; c++){
+                        elements[c].innerHTML = "This is the div number "+c
+                        elements[c].style.color = 'orange';
+                        elements[c].style['font-weight'] = 'bold';
+                    }
+                </pre>
+            </div>
         </div>
 
         <script src="assets/js/22_loops_for_and_for_in.js"></script>
