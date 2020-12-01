@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS: Loops For & For/In</title>
+        <link rel="stylesheet" href="assets/css/index.css">
+    </head>
+    <body>
+        <p>Loops são estruturas de repetição de comandos, então se eu quiser repetir algo, escrevo uma vez e defino quantas vezes ele vai ser repetido</p>
+        <p>
+            A primeira expressão é alguma coisa que vai ser executada uma vez antes do loop começar,
+            ou seja, inicializamos uma variável.
+            O segundo comando é uma condição para que o loop seja passado.
+            Já o terceiro comando que vamos executar em todas as passagens do loop, na final da passagem,
+            ou seja, incrementando o valor da primeira expressão para que o loop passe
+        </p>
+        <p>No exemplo a baixo, o loop passará 5 vezes:</p>
+        <code>
+            for(var a = 0; a < 5; a++){
+                console.log(a)
+            }
+        </code>
+
+        <div>
+            <p>Agora, como podemos percorrer um array usando um for?</p>
+            <code>
+                var students = ['Peter', 'Marie', 'Joseph']
+                for(var b = 0; b < students.length; b++){
+                    console.log(students[b])
+                }
+            </code>
+            <p>Note que usamos 'b' como índice para percorrer cada aluno</p>
+        </div>
+
+        <script src="assets/js/22_loops_for_and_for_in.js"></script>
+    </body>
+</html>
