@@ -9,3 +9,6 @@ document.getElementById('hover-me').onmouseover = function(){
 document.getElementById('leave-me').onmouseout = function(){
     alert('You mouse out the button')
 }
+document.onkeydown = function(){
+    alert('You keydown '+ event.keyCode)
+}
