@@ -6,3 +6,6 @@ document.getElementById('click-me').onclick = function(){
 document.getElementById('hover-me').onmouseover = function(){
     alert('You mouse over the button')
 }
+document.getElementById('leave-me').onmouseout = function(){
+    alert('You mouse out the button')
+}
