@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS: Nesting loops</title>
+        <link rel="stylesheet" href="assets/css/index.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <p>Nesting é quando há um condicional dentro do outro.</p>
+            </div>
+            <div class="row">
+                <h4>Exemplo 01</h4>
+                <p>
+                    Ao receber os dados de um formulário, recebemos:
+                </p>
+                <ul>
+                    <li>Idade</li>
+                    <li>Se é ou não sócia</li>
+                </ul>
+                <p>
+                    Baseado nisso, temos 4 faixas de preço:
+                </p>
+                <ul>
+                    <li>Sócios: grátis</li>
+                    <li>Não sócios menores de 18: R$ 6,00</li>
+                    <li>Não sócios maiores de 18: R$ 12,00</li>
+                    <li>Maiores de 65 anos: grátis</li>
+                </ul>
+                <p>Solução:</p>
+                <pre>
+                    var partner = false
+                    var age = 25
+                    
+                    if(partner == true || age >= 65){
+                        console.log('Free')
+                    }else{
+                        if(age >= 18){
+                            console.log('R$ 12,00')
+                        }else{
+                            console.log('R$ 6,00')
+                        }
+                    }
+                </pre>
+            </div>
+            <div class="row">
+                <h3>Exemplo 02</h3>
+                <p>Imprimindo os filhos dos funcionários no array:</p>
+                <ul id="children"></ul>
+            </div>
+        </div>
+        <!-- SCRIPTS -->
+        <script src="assets/js/25_loops_nesting.js"></script>
+    </body>
+</html>
