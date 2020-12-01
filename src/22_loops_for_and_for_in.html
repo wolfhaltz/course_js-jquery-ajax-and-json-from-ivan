@@ -5,8 +5,13 @@
         <link rel="stylesheet" href="assets/css/index.css">
     </head>
     <body>
+        
+        <!-- Loop: introduction -->
         <div>
             <p>Loops são estruturas de repetição de comandos, então se eu quiser repetir algo, escrevo uma vez e defino quantas vezes ele vai ser repetido</p>
+        </div>
+        <!-- Loop For -->
+        <div>
             <p>
                 A primeira expressão é alguma coisa que vai ser executada uma vez antes do loop começar,
                 ou seja, inicializamos uma variável.
@@ -22,6 +27,7 @@
             </pre>
         </div>
 
+        <!-- Loop For at Array -->
         <div>
             <p>Agora, como podemos percorrer um array usando um for?</p>
             <pre>
@@ -33,6 +39,7 @@
             <p>Note que usamos 'b' como índice para percorrer cada aluno.</p>
         </div>
 
+        <!-- Loop For/In -->
         <div>
             <h1>Loop For/In</h1>
             <p>No loop for/in, percorremos um objeto, deste modo:</p>
@@ -44,6 +51,22 @@
                 }
                 for(var prop in cars){
                     console.log(prop +':' + cars[prop])
+                }
+            </pre>
+        </div>
+
+        <!-- getElementsByClassName & Loop For -->
+        <div>
+            <h1>Using getElementsByClassName at a for loop</h1>
+            <div class="example"></div>
+            <div class="example"></div>
+            <p>The source code to change this above text (color and added text inside it), was:</p>
+            <pre>
+                var elements = document.getElementsByClassName("example");
+                for(var c = 0; c < elements.length; c++){
+                    elements[c].innerHTML = "This is the div number "+c
+                    elements[c].style.color = 'orange';
+                    elements[c].style['font-weight'] = 'bold';
                 }
             </pre>
         </div>

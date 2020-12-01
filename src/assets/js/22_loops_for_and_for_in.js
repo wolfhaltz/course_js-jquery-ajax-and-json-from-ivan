@@ -20,3 +20,11 @@ var cars = {
 for(var prop in cars){
     console.log(prop +':' + cars[prop])
 }
+
+// Using getElementsByClassName:
+var elements = document.getElementsByClassName("example");
+for(var c = 0; c < elements.length; c++){
+    elements[c].innerHTML = "This is the div number "+c
+    elements[c].style.color = 'orange';
+    elements[c].style['font-weight'] = 'bold';
+}
