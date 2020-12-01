@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS: Conditionals If, Else if & else</title>
+        <link rel="stylesheet" href="assets/css/index.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <p>
+                    De acordo com a condição do 'if',
+                    definimos se aquilo vai ser executado ou não.
+                </p>
+                <p>
+                    Se houver outras condições, que são os 'else if', ele vai percorrer.
+                    Do contrário, ele vai ir direto para o else.
+                </p>
+                <pre>
+                    var age = 17
+                    if(age < 18){
+                        console.log('-18')
+                    }else if(age > 18){
+                        console.log('+18')
+                    }else{
+                        console.log('what are you doing?????')
+                    }
+                </pre>
+            </div>
+            <div class="row">
+                <h3>Exemplo prático</h3>
+                <p>Se, um aluno, tiver a média igual ou maior à 7, e,
+                    suas faltas forem iguais ou inferiores a 4,
+                    ele está aprovado.
+                </p>
+                <p>Solução:</p>
+                <pre>
+                    var grades = 8;
+                    var absences = 4;
+                    
+                    if(grades >= 7 && absences <= 4){
+                        console.log('Approved!')
+                    }else{
+                        console.log('Disapproved!')
+                    }
+                </pre>
+
+            </div>
+        </div>
+        <!-- SCRIPTS -->
+        <script src="assets/js/24_conditionals_if_elseIf_else.js"></script>
+    </body>
+</html>
