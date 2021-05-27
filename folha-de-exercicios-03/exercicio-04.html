@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Folha 03: Exercício 04</title>
+</head>
+<body>
+    <div>
+        <h1>Folha de Exercícios 03</h1>
+        <small>Exercício 04</small>
+        <p>
+            Temos abaixo uma lista de vendas de um curso.
+            Cada venda é um objeto cujas propriedades guardam informações
+            sobre a venda, como o nome do aluno que comprou, a data,
+            o preço e se houve pedido de reembolso.
+        </p>
+        <p>
+            Solte as vendas na tabela abaixo,
+            mas não inclua as vendas que tiveram reembolso pedido.
+            Calcule também o total de vendas e solte na última linha da tabela.
+        </p>
+
+        <table>
+            <tr>
+                <th>Aluno</th>
+                <th>Data</th>
+                <th>Valor</th>
+            </tr>
+
+            <tbody id="vendas_cursos">
+                <tr>
+                    <td>Solte o nome do aluno</td>
+                    <td>Solte a data</td>
+                    <td>Solte o valor</td>
+                </tr>
+            </tbody>
+            
+            <tr style="font-weight: bold">
+                <td colspan="2">Total de vendas</td>
+                <td id="total_vendas">total aqui</td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        var vendas_cursos = [
+        {
+            'aluno': 'Emmanuel Gomes',
+            'data': '10/06/2018',
+            'valor': 34.99,
+            'reembolso': null
+            
+        },
+        {
+            'aluno': 'Carla Dias',
+            'data': '10/06/2018',
+            'valor': 29.99,
+            'reembolso': null
+            
+        },
+        {
+            'aluno': 'Rafael Marques',
+            'data': '11/06/2018',
+            'valor': 39.99,
+            'reembolso': '13/06/2018'
+            
+        },
+        {
+            'aluno': 'Maria Isabel Pereira',
+            'data': '11/06/2018',
+            'valor': 29.99,
+            'reembolso': null
+            
+        },
+        {
+            'aluno': 'Andre Luis Silva',
+            'data': '12/06/2018',
+            'valor': 34.99,
+            'reembolso': null
+            
+        }
+    ];
+        
+        var total_vendas = 0;
+        document.getElementById("vendas_cursos").innerHTML = "";
+
+        for(var x = 0; x < vendas_cursos.length; x++){
+            if(vendas_cursos[x]['reembolso'] == null){
+                total_vendas += vendas_cursos[x].valor;
+
+                var linhaHTML = "";
+                linhaHTML += "<tr>"
+                linhaHTML += "<td>"+ vendas_cursos[x].aluno +"</td>"
+                linhaHTML += "<td>"+ vendas_cursos[x].data +"</td>"
+                linhaHTML += "<td>"+ vendas_cursos[x].valor +"</td>"
+                linhaHTML += "<tr>"
+
+                document.getElementById("vendas_cursos").innerHTML += linhaHTML;
+            }
+        }
+
+        document.getElementById("total_vendas").innerHTML = total_vendas;
+    </script>
+</body>
+</html>
