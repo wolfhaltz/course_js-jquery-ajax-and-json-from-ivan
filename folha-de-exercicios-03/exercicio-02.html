@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Folha 03: Exercício 02</title>
+</head>
+<body>
+    <div>
+        <h1>Folha de Exercícios 03</h1>
+        <small>Exercício 02</small>
+        <p>
+            Solte dentro do elemento abaixo uma lista de todos os anos em que houve a Copa do Mundo de Futebol,
+            desde 1930 até 2018. Lembre-se que a copa do mundo ocorre de 4 em 4 anos.
+        </p>
+    </div>
+    <ul id="anos_copa"></ul>
+    <script>
+        for(x = 1930; x <= 2018; x += 4){
+            document.getElementById('anos_copa').innerHTML += "<li>" + x + "</li>";
+        }
+    </script>
+</body>
+</html>
