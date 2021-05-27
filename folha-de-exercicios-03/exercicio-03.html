@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Folha 03: Exercício 03</title>
+</head>
+<body>
+    <h1>Folha de Exercícios 03</h1>
+    <small>Exercício 03</small>
+    <p>
+        3) Informe nos campos abaixo duas notas e o total de faltas do aluno e depois solte o resultado no local apropriado.
+        Sendo que:
+    </p>
+
+    <li>O aluno para ser aprovado precisa ter, no mínimo 70% de presença (o total de aulas é 20)</li>
+    <li>O aluno para ser aprovado precisa ter média maior ou igual a 6.5</li>
+    <li>Caso o aluno não seja aprovado, o programa precisa dizer se foi por motivo de média insuficiente, por faltas ou pelos dois motivos.</li>
+
+    <br> 
+
+    <input id="nota1" type="number" placeholder="Informe a nota 1..."> &nbsp;&nbsp; Nota 1 <br>
+
+    <input id="nota2" type="number" placeholder="Informe a nota 2..."> &nbsp;&nbsp; Nota 2 <br>
+
+    <input id="n_faltas" type="number" placeholder="Num. de faltas...">  &nbsp;&nbsp; Faltas <br>
+
+    <br>
+
+    <button id="calcular">Calcular</button>
+    <br><br><br>
+
+    
+    <div id="result">
+    </div>
+
+    <script>
+        function verificar_faltas(qtd_faltas){
+            var faltas_permitidas = 20*70/100;
+            if(qtd_faltas <= faltas_permitidas){
+                return true
+            }
+            return false
+        }
+
+        document.getElementById('calcular').onclick = function (){
+            var nota_01 = parseFloat(document.getElementById('nota1').value);
+            var nota_02 = parseFloat(document.getElementById('nota2').value);
+            var faltas = parseFloat(document.getElementById('n_faltas').value);
+
+            var media = (nota_01 + nota_02)/2;
+            var presenca = verificar_faltas(faltas);
+
+            var resultado = document.getElementById('result');
+
+            if(media >= 6.5 && presenca == true){
+                resultado.innerText = "Aprovado\n\nMédia do aluno: "+media+"\nFaltas do aluno: "+ faltas;
+            }else{
+                resultado.innerText = "Reprovado\n"
+                if(media < 6.5){
+                    resultado.innerText += "\nA média para ser aprovado é 6.5 e a média do aluno foi de " + media + " .";
+                }
+                if(presenca == false)
+                resultado.innerText += "\nÉ necessário 70% de presença e o aluno faltou " + faltas + " vezes.";
+            }
+        }
+    </script>
+</body>
+</html>
