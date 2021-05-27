@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+</html>
+<body>
+    <!-- explicação do exercício -->
+    <div>
+        <p>
+            Use a função para converter de Celsius para Fahrenheit feita no exercício 2.
+            Só que desta vez, a temperatura em Celsius deve ser digitada pelo usuário no campo apropriado
+            e o cálculo deve ser feito quando o botão "Calcular" for pressionado.
+        </p>
+        <small>Dica:<br>Para converter graus Celsius em graus Fahrenheit, multiplique por 1,8 e adicione 32.</small>    
+    </div>
+
+    <!-- front-end do exercício -->
+    <div>
+        <input id="temp_celsius" type="number" placeholder="Temperatura...">
+        <sup>o</sup>C
+        <button onclick="calcular()">Calcular</button>
+    
+        <div id="temp_fahr"></div>
+        <sup>o</sup>F
+    </div>
+
+    <!-- exercício: minha solução do problema -->
+    <script>
+        function calcular(){
+            var celsius = document.getElementById('temp_celsius').value;
+            var fahrenheit = celsius * 1.8 + 32;
+            var resultado = document.getElementById('temp_fahr');
+            resultado.innerText = fahrenheit;
+
+            console.log('Oiê, tudo bem?\n\nVamos começar capturando os valores do input de Celsius:');
+            console.log(celsius);
+            console.log('Agora vamos calcular o valor em Fahrenheit, multiplicando o valor de Celsius por 1.8 e acrescentando 32:');
+            console.log(fahrenheit);
+            console.log('Com esse valor, já podemos imprimir o resultado na tela usando o innerText ;)')
+        }
+    </script>
+</body>
