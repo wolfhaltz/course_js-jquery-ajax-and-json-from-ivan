@@ -26,16 +26,26 @@
     <!-- exercício: minha solução do problema -->
     <script>
         function calcular(){
-            var celsius = document.getElementById('temp_celsius').value;
+            var celsius = parseFloat(document.getElementById('temp_celsius').value);
             var fahrenheit = celsius * 1.8 + 32;
             var resultado = document.getElementById('temp_fahr');
             resultado.innerText = fahrenheit;
-
-            console.log('Oiê, tudo bem?\n\nVamos começar capturando os valores do input de Celsius:');
-            console.log(celsius);
-            console.log('Agora vamos calcular o valor em Fahrenheit, multiplicando o valor de Celsius por 1.8 e acrescentando 32:');
-            console.log(fahrenheit);
-            console.log('Com esse valor, já podemos imprimir o resultado na tela usando o innerText ;)')
         }
     </script>
+
+
+    <!-- solução proposta no curso -->
+    <!--
+    <script>
+        function celsiusToFahrenheit(temp_c){
+            var temp_f = (9 * temp_c / 5)  + 32;
+            return temp_f;
+        }
+        document.getElementById('converter').onclick = function() {
+            var celsius = parseFloat(document.getElementById('temp_celsius').value);
+            var fahrenheit = celsiusToFahrenheit(celsius);
+            document.getElementById('temp_fahr').innerHTML = fahrenheit;
+        }
+    </script>
+    -->
 </body>
