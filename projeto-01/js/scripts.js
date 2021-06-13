@@ -1,7 +1,7 @@
 
 // Menu Mobile
-
-
+document.getElementById("hamburguer-icon").onclick = () => { document.getElementById("sliding-header-menu-outer").style.right = "0px"; }
+document.getElementById("sliding-header-menu-close-button").onclick = () => { document.getElementById("sliding-header-menu-outer").style.right = "-320px"; }
 
 
 // About us Tab
