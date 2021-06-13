@@ -405,7 +405,12 @@
         <script src="js/vendor/jquery.js"></script>
         <script src="js/scripts.js"></script>
         <script src="js/vendor/foundation.min.js"></script>
-       
+        <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+        <script
+        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=&v=weekly"
+        async
+    ></script>
+
         <script>
             $(document).foundation();
         </script>
