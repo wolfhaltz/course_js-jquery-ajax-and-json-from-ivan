@@ -34,6 +34,7 @@ for (var a = 0; a < about_tags.length; a++) {
 
 }
 
+
 // Slider de serviços
 
 var our_services = [
@@ -53,6 +54,33 @@ var our_services = [
   }
   
 ];
+
+var servico_atual = 0;
+let service_title = document.getElementById("service-title");
+let service_text = document.getElementById("service-text");
+
+document.getElementById("service-previous").onclick = function(){
+  
+  if(servico_atual == 0){
+    var servico_anterior = our_services.length-1;
+  }else{
+    var servico_anterior = servico_atual-1;
+  }
+  service_title.innerHTML = our_services[servico_anterior]['title']
+  service_text.innerHTML = our_services[servico_anterior]['text']
+  servico_atual = servico_anterior;
+}
+document.getElementById("service-next").onclick = function(){
+  if(servico_atual == our_services.length -1){
+    var servico_seguinte = 0;
+  }else{
+    var servico_seguinte = servico_atual+1;
+  }
+  service_title.innerHTML = our_services[servico_seguinte]['title']
+  service_text.innerHTML = our_services[servico_seguinte]['text']
+  servico_atual = servico_seguinte;
+}
+
 
 
 // Data Footer
