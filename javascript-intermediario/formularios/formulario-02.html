@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Forms 02</title>
+    </head>
+    <body>
+        
+        <div>
+            <form action="">
+                <input type="checkbox" name="interesse" value="Front-end">
+                <label for="">Front-end</label>
+                <input type="checkbox" name="interesse" value="Back-end">
+                <label for="">Back-end</label>
+                <input type="checkbox" name="interesse" value="Design">
+                <label for="">Design</label>
+            </form>
+            <div>
+                <button id="mostrar_check">Mostrar checked</button>
+            </div>
+            <div>
+                <ul id="check_selecionado"></ul>
+            </div>
+        </div>
+        <script>
+            // Check Boxes:
+            document.getElementById('mostrar_check').onclick = function(){
+                // limpando o inner HTML do que será mostrado:
+                document.getElementById('check_selecionado').innerHTML = '';
+                // capturando o array:
+                var check = document.getElementsByName('interesse');
+                // fazendo o loop pelo array:
+                check.forEach(element => {
+                    if(element.checked){
+                        // printando os valores:
+                        document.getElementById('check_selecionado').innerHTML += '<li>' + element.value + '</li>';
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>
