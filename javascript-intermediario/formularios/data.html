@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data</title>
+</head>
+<body>
+    
+    <div>
+        <input type="date" id="data_evento">
+        <button id="mostrar_data">Mostrar data</button>
+    </div>
+    <div id="data_selecionada"></div>
+    <script>
+        document.getElementById('mostrar_data').onclick = function(){
+            var data_select = document.getElementById('data_evento').value;
+            var data_completa = new Date(data_select);
+
+            document.getElementById('data_selecionada').innerHTML = data_completa;
+        }
+    </script>
+</body>
+</html>
