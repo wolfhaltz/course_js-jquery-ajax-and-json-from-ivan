@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Onchange: select</title>
+    </head>
+    <body>
+        <div>
+            <select name="" id="escolaridade">
+                <option value="opt1">01</option>
+                <option value="opt2">02</option>
+                <option value="opt3">03</option>
+            </select>
+        </div>
+        <div id="escolaridade_selecionada"></div>
+
+        <script>
+            document.getElementById('escolaridade').onchange = function(){
+                var campo_select = document.getElementById('escolaridade');
+                var indice_selecionado = campo_select.options.selectedIndex;
+                var valor_selecionado = campo_select.options[indice_selecionado].innerHTML;
+
+                document.getElementById('escolaridade_selecionada').innerHTML = valor_selecionado;
+            };
+        </script>
+    </body>
+</html>
