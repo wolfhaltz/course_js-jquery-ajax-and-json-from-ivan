@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clock</title>
+    <style>
+        #relogio{
+            padding: 14px;
+            width: 200px;
+            border-radius: 12px;
+            font-size: 28px;
+            font-weight: bold;
+            text-align: center;
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="relogio"></div>
+    <script>
+        window.setInterval(function(){
+        // pegando a hora atual:
+        var horal_atual = new Date();
+
+        // separando a hora
+        var horas = horal_atual.getHours();
+        var minutos = horal_atual.getMinutes();
+        var segundos = horal_atual.getSeconds();
+
+        // resolvendo o problema de não ter 0 a esquerda
+        function formatar_tempo(tempo){
+            if(tempo >= 0 && tempo <= 9){
+                var tempo_formatado = tempo.toString();
+                tempo_formatado = '0' + tempo_formatado;
+            }else{
+                var tempo_formatado = tempo.toString();
+            }
+            return tempo_formatado;
+        }
+
+        // printa na tela
+        document.getElementById('relogio').innerHTML = formatar_tempo(horas) + ":" + formatar_tempo(minutos) + ":" + formatar_tempo(segundos);
+        }, 1000);
+    </script>
+</body>
+</html>
