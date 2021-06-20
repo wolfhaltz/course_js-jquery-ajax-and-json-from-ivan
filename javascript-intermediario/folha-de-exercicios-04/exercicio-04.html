@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercício 04</title>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <style>
+            .container{
+                width: 200px;
+            }
+            #cronometro{
+                padding: 20px;
+                margin: 0 0 10px 0;
+                border-radius: 12px;
+                background-color: black;
+                text-align: center;
+                font-size: 28px;
+                color: white;
+            }
+            .div-buttons{
+                display: inline-flex;
+                width: 100%;
+            }
+            button{
+                padding: 10px 20px;
+                width: 100%;
+                border-radius: 12px;
+                background-color: teal;
+                color: white;
+            }
+            button:first-child{margin: 0 10px 0 0;}
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div id="cronometro">00:00:00 000</div>
+            <div class="div-buttons">
+                <button id="comecar_parar">Começar</button>
+                <button id="zerar">Zerar</button>
+            </div>
+        </div>
+
+        <script>
+            function add_left_zero(number) {
+                if (number < 10) {
+                    return "0" + number.toString();
+                } else {
+                    return number.toString();
+                }
+            }
+
+            var iniciado = false, hora_inicio, hora_atual, tempo_passado, init_cronometro, horas, minutos, segundos, milissegundos;
+            document.getElementById('comecar_parar').onclick = function(){
+                if(!iniciado){
+                    iniciado = true;
+                    document.getElementById('comecar_parar').innerHTML = 'Parar'
+                    
+                    // começar o cronômetro, testando 1º se há algum valor:
+                    if(!hora_inicio){
+                        hora_inicio = new Date().getTime();
+                    }else{
+                        hora_inicio = new Date().getTime() - tempo_passado;
+                    }
+                    
+                    init_cronometro = window.setInterval(function(){
+                        hora_atual = new Date().getTime();
+                        tempo_passado = hora_atual - hora_inicio;
+
+                        horas = Math.floor(tempo_passado/3600000);
+                        resto = tempo_passado - (horas * 3600000);
+
+                        minutos = Math.floor(resto / 60000);
+                        resto -= (minutos * 60000);
+
+                        segundos = Math.floor(resto / 1000);
+                        resto -= (segundos * 1000);
+
+                        milissegundos = resto;
+
+                        document.getElementById("cronometro").innerHTML = add_left_zero(horas) + ':' + add_left_zero(minutos) + ':' + add_left_zero(segundos) + ' ' + add_left_zero(milissegundos);
+                    }, 10);
+                }else{
+                    // parando o cronômetro:
+                    window.clearInterval(init_cronometro);
+                    // atualizando valores:
+                    iniciado = false;
+                    document.getElementById('comecar_parar').innerHTML = 'Começar'
+                }
+            }
+
+            // zerando o cronômetro:
+            document.getElementById('zerar').onclick = function(){
+                tempo_passado = 0;
+                hora_inicio = new Date().getTime();
+                document.getElementById("cronometro").innerHTML = "00:00:00 000";
+            }
+        </script>
+        
+    </body>
+</html>
