@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercício 03</title>
+    </head>
+    <body>
+        
+        <script>
+            var carros = [
+                {
+                    'placa': 'ABC-8193',
+                    'categoria': '1'
+                },
+                {
+                    'placa': 'GXL-9001',
+                    'categoria': '2'
+                },
+                {
+                    'placa': 'GDK-5642',
+                    'categoria': '3'
+                },
+                {
+                    'placa': 'GDK-5642',
+                    'categoria': '6'
+                }
+            ];
+
+            function valor_a_pagar(veiculo){
+                switch(veiculo.categoria){
+                    case '1':
+                        return 11.22;
+                        break;
+                    case '2':
+                        return 22.45
+                        break;
+                    case '3':
+                        return 16.88
+                        break;
+                    case '4':
+                        return 33.65
+                        break;
+                    default:
+                        console.log('Veículo de placa '+veiculo.placa+' não fez pagamento por erro de categoria (Categoria: '+veiculo.categoria+").")
+                        return 0;
+                }
+            }
+
+            var total_arrecadado = 0;
+            for(var a = 0;a<carros.length;a++){
+                total_arrecadado += valor_a_pagar(carros[a]);
+            }
+            console.log('Faturamento total:')
+            console.log('R$ '+total_arrecadado.toFixed(2))
+        </script>
+    </body>
+</html>
