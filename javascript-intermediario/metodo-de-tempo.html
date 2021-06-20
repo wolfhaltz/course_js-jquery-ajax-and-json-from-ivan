@@ -40,13 +40,20 @@
             }, 3000);
 
 
-            // evento onclick no button para mostar spiner
+            // evento onclick no button para mostrar spiner
             document.getElementById('mostrar-loader').onclick = function(){
                 document.getElementById('spiner-loader').style.display = 'block';
                 window.setTimeout(function(){
                     document.getElementById('spiner-loader').style.display = 'none';
                 }, 5000);
             }
+
+            // criando contador no console:
+            var count = 0;
+            window.setInterval(function(){
+                console.log(count);
+                count++;
+            }, 1000);
         </script>
     </body>
 </html>
