@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Onchange: checkboxes</title>
+</head>
+<body>
+    <div>
+        <form action="">
+            <input type="checkbox" name="lanche" value="Hamburguer">
+            <label for="">Hamburguer</label>
+            <input type="checkbox" name="lanche" value="Batata frita">
+            <label for="">Batata frita</label>
+            <input type="checkbox" name="lanche" value="Coca-cola">
+            <label for="">Coca-cola</label>
+        </form>
+    </div>
+    <div>
+        <ul id="check_selecionado"></ul>
+    </div>
+    
+    <script>
+        // Check Boxes:
+        var check = document.getElementsByName('lanche');
+        for(var a = 0; a < check.length; a++){
+            check[a].onchange = function(){
+                // limpando o inner HTML do que será mostrado:
+                document.getElementById('check_selecionado').innerHTML = '';
+                for(var b=0; b < check.length;b++){
+                    if(check[b].checked){
+                    // printando os valores:
+                    document.getElementById('check_selecionado').innerHTML += '<li>' + check[b].value + '</li>';
+                }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
