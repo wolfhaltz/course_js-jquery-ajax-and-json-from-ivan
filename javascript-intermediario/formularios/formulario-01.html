@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<heat>
+    <title>Forms 01</title>
+</heat>
+<body>
+    
+    <form action="">
+        <select name="" id="opcoes">
+            <option value="opt1">Praia</option>
+            <option value="opt2">Montanha</option>
+            <option value="opt3">Cidade</option>
+        </select>
+    </form>
+
+    <br>
+    
+    <button id="mostrar_opcao">Mostrar</button>
+
+    <div>
+        <strong id="opcao_selecionada"></strong>
+        <br>
+        <strong id="valor_selecionado"></strong>
+    </div>
+
+    <script>
+        document.getElementById('mostrar_opcao').onclick = function(){
+            var campo_select = document.getElementById('opcoes');
+            var indice_selecionado = campo_select.options.selectedIndex;
+            var innerHTML_selecionado = campo_select.value;
+            var valor_selecionado = campo_select.options[indice_selecionado].innerHTML;
+
+            // Mostrando o innerHTML:
+            document.getElementById('opcao_selecionada').innerHTML = innerHTML_selecionado;
+            
+            // Mostrando o valor:
+            document.getElementById('valor_selecionado').innerHTML = valor_selecionado;
+        }
+    </script>
+</body>
+</html>
