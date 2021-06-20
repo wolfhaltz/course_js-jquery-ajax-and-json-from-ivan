@@ -4,26 +4,48 @@
     <title>Forms 01</title>
 </heat>
 <body>
-    
-    <form action="">
-        <select name="" id="opcoes">
-            <option value="opt1">Praia</option>
-            <option value="opt2">Montanha</option>
-            <option value="opt3">Cidade</option>
-        </select>
-    </form>
 
-    <br>
-    
-    <button id="mostrar_opcao">Mostrar</button>
-
+    <!-- Select box -->
     <div>
-        <strong id="opcao_selecionada"></strong>
+        <form action="">
+            <select name="" id="opcoes">
+                <option value="opt1">Praia</option>
+                <option value="opt2">Montanha</option>
+                <option value="opt3">Cidade</option>
+            </select>
+        </form>
+    
         <br>
-        <strong id="valor_selecionado"></strong>
+        
+        <button id="mostrar_opcao">Mostrar</button>
+    
+        <div>
+            <strong id="opcao_selecionada"></strong>
+            <br>
+            <strong id="valor_selecionado"></strong>
+        </div>
+    </div>
+
+    <!-- Radio Buttons -->
+    <div>
+        <form action="">
+            <input type="radio" name="genero" value="Masculino" checked>
+            <label for="">Masculino</label>
+            
+            <input type="radio" name="genero" value="Feminino">
+            <label for="">Feminino</label>
+
+            <input type="radio" name="genero" value="Prefiro não dizer">
+            <label for="">Prefiro não dizer</label>
+        </form>
+        <div>
+            <button id="mostrar_radio">Mostrar radio</button>
+        </div>
+        <div id="radio_selecionado"></div>
     </div>
 
     <script>
+        // Select box:
         document.getElementById('mostrar_opcao').onclick = function(){
             var campo_select = document.getElementById('opcoes');
             var indice_selecionado = campo_select.options.selectedIndex;
@@ -36,6 +58,19 @@
             // Mostrando o valor:
             document.getElementById('valor_selecionado').innerHTML = valor_selecionado;
         }
+
+        // Radio:
+        document.getElementById('mostrar_radio').onclick = function(){
+            var radio = document.getElementsByName('genero');
+            var radio_selected;
+            for(var a = 0; a < radio.length; a++){
+                if(radio[a].checked){
+                    radio_selected = radio[a].value;
+                    break;
+                }
+            }
+            document.getElementById('radio_selecionado').innerHTML = radio_selected;
+        };
     </script>
 </body>
 </html>
