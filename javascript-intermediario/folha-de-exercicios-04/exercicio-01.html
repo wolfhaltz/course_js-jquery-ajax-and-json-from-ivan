@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercício 01</title>
+    </head>
+    <body>
+        
+        <div>
+            O select box inicia na primeira opção (Selecione o estado).
+            Crie uma funcionalidade para que, quando o usuário escolher uma opção, esta fique guardada em local storage e quando a página for carregada da próxima vez, ela já esteja selecionada.
+        </div>
+        <div>
+            <select name="" id="estados">
+                <option value="Paraná">Paraná</option>
+                <option value="São Paulo">São Paulo</option>
+            </select>
+        </div>
+
+        <script>
+            document.getElementById('estados').onchange = function(){
+                window.localStorage.setItem('estado', document.getElementById('estados').value);
+            }
+            if (localStorage.estado) {
+                document.getElementById("estados").value = localStorage.estado;
+            }
+        </script>
+    </body>
+</html>
